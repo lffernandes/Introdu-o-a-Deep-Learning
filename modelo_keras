@@ -1,0 +1,26 @@
+import numpy as np
+from keras.models import Sequential
+from keras.layers import Dense
+
+x = np.array([[0.1], [0.2], [0.3]])
+y = np.array([[0.2], [0.4], [0.6]])
+
+model = Sequential() # modelo de rede neural com 1 entrada, 3 camadas e 1 saída.
+
+model.add(Dense(3, input_dim=1))
+model.add(Dense(1))
+
+model.compile(optimizer='sgd', loss='mse', metrics=['acc']) 
+
+model.fit(x, y, epochs=2000)
+
+while true:
+    i = imput('Digite um número: ')
+
+    i = float(i)
+
+    i = np.asmatrix(i)
+
+    result = model.redict(i)
+
+    print(i, ' Previsto => ', result[0])
